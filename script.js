@@ -3,7 +3,6 @@ const boxes = document.querySelectorAll(".box");
 
 // Function to generate random color
 function randomColor() {
-    // Random values for R, G, B between 0–255
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
@@ -11,8 +10,11 @@ function randomColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-// Add event listener to each box
+// Assign random colors on page load
 boxes.forEach(box => {
+    box.style.backgroundColor = randomColor();
+
+    // Add click event to change color again
     box.addEventListener("click", function () {
         box.style.backgroundColor = randomColor();
     });
